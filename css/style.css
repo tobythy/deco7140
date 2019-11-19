@@ -1,0 +1,774 @@
+
+/* Globle Setting */
+
+* {
+	font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	line-height: 1.5;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+h2 {
+	font-size: 3em;
+}
+
+p{
+	font-size: 1.3em;
+}
+
+a{
+	color: lightblue;
+}
+
+#intro, #concept, #cloud, #about{
+	padding: 10% 10% 0 10%;
+	/* height: 100vh; */
+	color: white;
+}
+
+#contents {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+/* Menu */
+
+#menu {
+	position: fixed;
+	background: radial-gradient(circle, #010e1a, #061b2e, #052743, #063359, #0a3f70);
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9;
+}
+
+#menu ul {
+	display: flex;
+	justify-content: center;
+}
+
+#menu li {
+	list-style: none;
+}
+
+#menu a {
+	display: block;
+	color: white;
+	padding: 1em 1.5em;
+	text-decoration: none;
+	font-weight: bold;
+	transition: all 1s ease;
+}
+
+#menu a:hover {
+	background-color: white;
+	color: black;
+}
+
+
+
+
+/* Welcome */
+
+#welcome {
+	height: 100vh;
+	text-align: center;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 3em;
+	opacity: 1;
+	transition: all 2s ease-out;
+}
+
+
+#welcome h1, #welcome p {
+	opacity: 0.9;
+	margin: 0;
+}
+
+/* Rectangle Animation */
+
+.wrapper {
+	overflow: hidden;
+	position: absolute;
+    width: 100%;
+	height: 100%;
+    z-index: 2;
+}
+
+.rectangle-canvas {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100%;
+	height: 100%;
+	transform: translate(-50%, -50%);
+}
+
+.rectangle {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 15;
+	transform-origin: center center;
+	animation: rectangle-animation 10s linear infinite;
+}
+.rectangle-1 {
+	animation-delay: 0s;
+}
+.rectangle-2 {
+	animation-delay: -0.5s;
+}
+.rectangle-3 {
+	animation-delay: -1s;
+}
+.rectangle-4 {
+	animation-delay: -1.5s;
+}
+.rectangle-5 {
+	animation-delay: -2s;
+}
+.rectangle-6 {
+	animation-delay: -2.5s;
+}
+.rectangle-7 {
+	animation-delay: -3s;
+}
+.rectangle-8 {
+	animation-delay: -3.5s;
+}
+.rectangle-9 {
+	animation-delay: -4s;
+}
+.rectangle-10 {
+	animation-delay: -4.5s;
+}
+.rectangle-11 {
+	animation-delay: -5s;
+}
+.rectangle-12 {
+	animation-delay: -5.5s;
+}
+.rectangle-13 {
+	animation-delay: -6s;
+}
+.rectangle-14 {
+	animation-delay: -6.5s;
+}
+.rectangle-15 {
+	animation-delay: -7s;
+}
+.rectangle-16 {
+	animation-delay: -7.5s;
+}
+.rectangle-17 {
+	animation-delay: -8s;
+}
+.rectangle-18 {
+	animation-delay: -8.5s;
+}
+.rectangle-19 {
+	animation-delay: -9s;
+}
+.rectangle-20 {
+	animation-delay: -9.5s;
+}
+
+@keyframes rectangle-animation{
+	0%{
+		transform: scale(0) rotate(0deg);
+		opacity: 1;
+	}
+	
+	100%{
+		transform: scale(1) rotate(90deg);
+		opacity: 0;
+	}
+}
+
+
+
+/* Story */
+
+#story{
+	display: flex;
+	color: white;
+	padding: 10% 10% 10% 0;
+	position: relative;
+}
+
+#story-content{
+	display: block;
+	margin-left: 40%;
+}
+
+#story img{
+	position: absolute;
+	width: 30%;
+	left: 0;
+	opacity: 0.5;
+}
+
+
+/* Story Popup */
+
+#story-popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.75);
+	width: 100%;
+	height: 100%;
+	transition: all 0.5s ease;
+	visibility: hidden;
+	opacity: 0;
+}
+
+
+#story-popup article{
+	display: flex;
+	padding-bottom: 3em;
+	height: 70vh;
+}
+
+#story-popup .image {
+	top: 20%;
+	background-image: url(../images/neuromancer.jpg);
+	overflow: scroll; /* There is a plot of the story, user can scroll in the window to read */
+}
+
+#story-popup .story-list {
+	background:linear-gradient(to right bottom, rgb(81, 129, 161), rgb(55, 74, 140));
+	margin: 5em;
+	padding-top: 5em;
+	box-shadow: rgba(0,0,0,0.25) 5px 5px 10px;
+	position: relative;
+	border-radius: 5px;
+}
+
+#story-popup .close-button a {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 1.25em;
+	text-transform: uppercase;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 1em;
+}
+
+#story-popup .close-button a:before {
+	content: "\2716"; 
+	padding-right: 5px;
+	
+}
+
+
+body.show-story-popup {
+	overflow: hidden; 
+}
+
+body.show-story-popup #story-popup {
+	visibility: visible;
+	opacity: 1;
+}
+
+
+
+/* Color toggle */
+
+/* Background color toggle between story part and education content part */
+
+section {
+	background: radial-gradient(circle, #010e1a, #061b2e, #052743, #063359, #0a3f70);
+	transition: all 1s ease-out;
+	
+}
+
+.story-color{
+	background: linear-gradient(to right bottom, #e7152e, #d50058, #b31777, #853287, #523e87, #363c7a, #1c396b, #063359, #062a48, #062138, #061828, #010e1a);
+}
+
+
+
+
+/* Introduction */
+
+
+#intro article{
+	display: flex;
+	align-items: center;
+}
+
+#intro figure{
+	width: 100%;
+	margin-top: 5%;
+	margin-right: 5%;
+	text-align: center;
+	color: lightblue;
+}
+
+#intro img{
+	width: 100%;
+	border-radius: 100%;
+}
+
+
+#intro .quote blockquote {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+#intro .quote blockquote:before {
+    content: "\201C";
+    font-size: 2em;
+    margin-right: 0.2em;
+    position: relative;
+    top: 10px;
+}
+
+
+
+/* Concept */
+
+#concept{
+	padding-bottom: 10%;
+}
+
+
+/* Iot Concept Decompose */
+
+.iot-content{
+	color: white;
+	padding-left:30%; 
+}
+
+.event {
+	overflow: scroll;
+	height: 100vh;
+	width: 100vw;
+}
+
+.image{
+	top: -80%;
+	left: 10%;
+	background-size: contain;
+	height: 20em;
+	width: 80%;
+	position: absolute;
+	background-position: left;
+	background-repeat: no-repeat;
+
+}
+
+.pinWrapper {
+	height: 100%;
+	width: 100%;
+}
+
+
+
+.scrollmagic-pin-spacer {
+	position: absolute !important;
+	clip: rect(auto, auto, auto, auto);
+}
+
+
+.event1 {
+    background-color: #0A3F70;
+}
+
+.event1 .image {
+	top: 20%;
+	background-image: url(../images/iot-thing.svg);
+}
+
+.event2 {
+	background-color: rgb(16, 32, 92);
+}
+
+.event2 .image {
+	background-image: url(../images/iot-cpu.svg);
+}
+
+.event3 {
+	background-color: rgb(55, 74, 140);
+}
+.event3 .image {
+	background-image: url(../images/iot-wifi.svg);
+}
+
+
+  
+
+/* IoT Application Flip Card */
+
+/* Best viewed in Chrome */
+
+#grid{
+	margin-top: 10%;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 0;
+}
+
+#grid h3{
+	font-size: 2em;
+}
+
+.flip-card {
+	background-color: transparent;
+	width: 25vw;
+	height: 480px;
+	perspective: 1000px;
+	margin-bottom: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+}
+
+.flip-card-front {
+	background-image: linear-gradient(to right bottom, rgb(81, 129, 161), rgb(55, 74, 140));
+	color: white;
+	padding: 60px 0;
+	border-radius: 5px;
+	box-shadow: 0 0 10px 3px rgba(0,0,0,0.15);
+	background-position: bottom;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.flip-card-back {
+	background-image: linear-gradient(to right bottom, rgb(81, 129, 161), rgb(55, 74, 140));
+	color: white;
+	transform: rotateY(180deg);
+	padding: 30px 30px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px 3px rgba(0,0,0,0.15);
+	text-align: left;
+	font-size: 0.8em;
+}
+
+.flip-card-back a{
+	color: yellow;
+}
+
+
+
+#content-1 .flip-card-front{
+	background-image: url("../images/smart-home.jpg");	
+	background-size: cover;
+}
+
+
+#content-2 .flip-card-front{
+	background-image: url("../images/smart-campus.jpg");	
+	background-size: cover;
+}
+
+
+#content-3 .flip-card-front{
+	background-image: url("../images/smart-city.jpg");	
+	background-size: cover;
+}
+
+
+/* Quiz Waiting Part */
+
+#quizzes{
+	color: white;
+	text-align: center;
+	
+}
+
+#quiz-start{
+	padding:0 10% ;
+}
+
+.scroll-container {
+	height: 100vh;
+	overflow: scroll;
+	scroll-snap-type: y mandatory;
+  }
+  
+.scroll-item {
+	position: relative;
+	scroll-snap-align: start;
+	height: 100vh;
+}
+
+.scroll-item__content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	color: white;
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+
+.scroll-item__content span {
+	display: block;
+}
+
+.scroll-item__inner {
+	border: 2px solid white;
+	border-radius: 1em;
+	padding: 1rem;
+	transition: opacity 800ms, transform 800ms;
+	opacity: 0;
+	transform: translate3d(0, -1.5rem, 0);
+}
+
+.scroll-item__inner.is-visible {
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
+}
+
+
+/* Quiz */
+
+#exercise {
+	max-width: 80vw;
+	margin: 10vh auto;
+	padding: 10px 20px 20px 20px;
+	border-radius: 20px;
+	border: 2px solid rgb(81, 129, 161);
+}
+  
+.quiz {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column wrap;
+	align-content: center;
+}
+
+  
+#exercise h1 {
+	font-family: sans-serif;
+	font-size: 2em;
+	text-align: center;
+	color: rgb(81, 129, 161);
+}
+  
+.style_hr {
+	background: rgb(81, 129, 161);
+	border: 0;
+	width: 60vw;
+	height: 1px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	overflow: visible;
+	text-align: center;
+}
+  
+.style_hr:after {
+	background: rgb(81, 129, 161);
+	display: inline-block;
+	font-size: 0.9em;
+	width: 800px;
+	padding: 0 0.6em;
+	position: relative;
+	top: -0.7em;
+}
+  
+#score {
+	background: linear-gradient(to right bottom, rgb(81, 129, 161), rgb(55, 74, 140));
+	padding: 1em;
+	margin: 2em;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 2em;
+	color: white;
+}
+  
+#exercise #question {
+	font-size: 1.5em;
+	color: white;
+}
+  
+.buttons {
+	margin: 0;
+	padding: 0;
+	width: 60vw;
+	height: 22em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+}
+  
+.btn-flex {
+	margin: 0;
+	width: 50vw;
+	height: 3.3em;
+}
+  
+#btn0,
+#btn1,
+#btn2,
+#btn3 {
+	background: radial-gradient(circle, rgba(55, 73, 140, 0.842) 0%, rgb(81, 129, 161) 100%);
+	width: 655px;
+	justify-content: center;
+	font-size: 1.4em;
+	color: white;
+	border-radius: 10px;
+}
+
+  
+#progress {
+	color: rgb(81, 129, 161);
+	font-size: 1em;
+}
+  
+#btn0:hover,
+#btn1:hover,
+#btn2:hover,
+#btn3:hover {
+	cursor: pointer;
+	background: rgb(81, 129, 161);
+}
+  
+#btn0:focus,
+#btn1:focus,
+#btn2:focus,
+#btn3:focus {
+	outline: 0;
+}
+  
+/* Selection */
+
+#bottom-selection{
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 10%;
+}
+
+.selection a{
+	width: 50vw;
+	height: 50vh;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#back-to-top{
+	background: #E6E6E6;
+}
+
+#back-to-top a{
+	color: #43425D;
+}
+
+#foward-to-quiz{
+	background: #43425D;
+	color: #E6E6E6;
+}
+
+#foward-to-quiz a{
+	color: #E6E6E6;
+}
+
+/* About */
+#about{
+	padding: 10%;
+}
+
+/* Responsive Design Part */
+
+@media only screen and (max-width: 1200px) {
+
+	#grid{
+		display: block;
+	}
+
+	.flip-card {
+		width: 75vw;
+		height: 250px;
+	}
+}
+
+
+@media only screen and (max-width: 900px) {
+
+	#menu{
+		position: relative;
+	}
+	#menu ul{
+		display: block;
+		text-align: center;
+		padding: 0;
+	}
+	.image{
+		background-size: 20%;
+	}
+
+	.image p{
+		font-size: 1em;
+	}
+
+	.image h2{
+		font-size: 2em;
+	}
+
+
+	#intro article{
+		display: block;
+	}
+
+	#story{
+		display: block;
+		padding: 0;
+	}
+
+	#story img {
+		position: relative;
+		left: 30%;
+	}
+	#story-content{
+		margin: 0;
+		padding: 10%;
+	}
+	
+}
+
+@media only screen and (max-width: 650px) {
+	.flip-card {
+		height: 350px;
+	}
+}

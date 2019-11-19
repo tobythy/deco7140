@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Neuromancer</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+
+        <nav id="menu">
+        
+            <ul>
+                <li>
+                    <a href="index.html#welcome">Welcome</a>
+                </li>
+                <li>
+                        <a href="index.html#story">Story</a>
+                    </li>
+                <li>
+                    <a href="index.html#intro">Introduction</a>
+                </li>
+                <li>
+                    <a href="index.html#concept">Concept</a>
+                </li>
+                <li>
+                    <a href="index.html#cloud">Application</a>
+                </li>
+                <li>
+                    <a href="quiz.html">Quiz</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+    
+            </ul>
+    
+        </nav>
+
+
+        <section id="contents">
+            <div id="quizzes" class="scroll-container">
+
+
+                <div id="quiz-start" class="scroll-item is-visible">
+                    <div class="scroll-item__content">
+                        <h2>Now you have an opportunity to check your knowledge and skills by taking a brief quiz</h2>
+                        <div class="scroll-item__inner" data-observer>
+                                <span>Scroll Down to Start</span>
+                                <span>↓</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="scroll-item">
+                        <div class="scroll-item__content">
+                            <div id="exercise">
+                            
+                                <div class="quiz" id="quiz">
+                                    <header class="header">
+                                        <h1>Quiz</h1>
+                                    </header>
+                                    <hr class="style_hr" />
+                                    
+                                    <p id="question"></p>
+                                    
+                                    <div class="buttons">
+                                        <button class="btn-flex" id="btn0"><span id="choice0"></span></button>
+                                        <button class="btn-flex" id="btn1"><span id="choice1"></span></button>
+                                        <button class="btn-flex" id="btn2"><span id="choice2"></span></button>
+                                        <button class="btn-flex" id="btn3"><span id="choice3"></span></button>
+                                    </div>
+                                    
+                                    <hr class="style_hr">
+                                    <footer>
+                                        <p id="progress">Question x of y.</p>
+                                    </footer>
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        
+                
+        </section>
+
+        <script src="js/quizScript.js"></script>
+
+    </body>
+</html>
